@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Day 11</title>
+    <link rel="stylesheet" href="css/form11.css">
+    
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+    <div class="container">
+        <div class="box">
+            <h1>Formulir Pendaftaran Angota Baru Banget</h1>
+            <form id="form_register">
+                <fieldset>
+                    <legend>Data Diri</legend>
+                    <p class="label">Nama Depan</p>
+                    <input type="text" id="nama_depan" placeholder="Masukkan Nama Depan">
+                    <p class="label">Nama Belakang</p>
+                    <input type="text" id="nama_belakang" placeholder="Masukkan Nama Belakang">
+                    <p class="label">Nomor Telepon</p>
+                    <input type="number" id="nomor_telepon" placeholder="Masukkan Nomor Kontak"/>
+                    <p class="label">Anak Ke</p>
+                    <input type="number" id="urutan_anak" placeholder="anak ke-"/>
+                    <p class="label">Gender</p>
+                    <input type="radio" name="gender" value="Laki-laki"> Laki-Laki
+                    <input type="radio" name="gender" value="Perempuan"> Perempuan
+                </fieldset>
+        
+                <fieldset>
+                    <legend>Alamat</legend>
+                    <textarea name="" id="alamat" cols="30" rows="5" placeholder="Masukkan Alamat"></textarea>
+                </fieldset>
+        
+                <button id="test">SUBMIT</button>
+                <div id="data-diri">
+                    <h1>Data Output : </h1>
+                    <p id="hasil"></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="box">
+            <form id="form_kalkulator">
+                <h1 style="text-align: center;">Kalkulator Sederhana</h1>
+                <p class="label">Angka 1</p>
+                <input type="number" id="angka_1" placeholder="Masukkan Angka 1"/>
+                <p class="label">Angka 2</p>
+                <input type="number" id="angka_2" placeholder="Masukkan Angka 2"/>
+                <br>
+                <br>
+                <button id="kali" style="width: 25%;">Kali x</button>
+                <button id="bagi" style="width: 25%;">Bagi /</button>
+                <button id="tambah" style="width: 25%;">Tambah +</button>
+                <button id="kurang" style="width: 23%;">Kurang -</button>
+                <br>
+                <button id="modulus" style="width: 50%;">Modulus %</button>
+                <button id="pangkat" style="width: 49%;">Pangkat ^</button>
+
+            </form>
+            <div id="data-diri">
+                <h1>Data Output : </h1>
+                <p id="hasil_calculator"></p>
+            </div>
+        </div>
+
+        <div class="box">
+            <form id="form_quiz">
+                <h1 style="text-align: center;">Quiz</h1>
+                <p class="label">1. Siapakah Presiden ketiga Republik Indonesia ?</p>
+                <input type="radio" name="soal_1" value="25"> Prof.B.J.Habibie
+                <input type="radio" name="soal_1" value="0"> Abdurrahman Wahid
+                <input type="radio" name="soal_1" value="0"> Ir. Soekarno
+                <input type="radio" name="soal_1" value="0"> Joko Widodo
+                <p class="label">2. Berikut adalah nama-nama bahasa pemograman, kecuali ?</p>
+                <input type="radio" name="soal_2" value="0"> Python
+                <input type="radio" name="soal_2" value="25"> Micro:bit
+                <input type="radio" name="soal_2" value="0"> Javascript
+                <input type="radio" name="soal_2" value="0"> HTML
+                <p class="label">3. Apa judul lagu yang diduga diplagiat oleh lagu 'Sayang' Via Vallen ?</p>
+                <input type="radio" name="soal_3" value="0"> Qing Fei De Yi
+                <input type="radio" name="soal_3" value="0"> Ting Hai
+                <input type="radio" name="soal_3" value="25"> Mirai E Kiroro
+                <input type="radio" name="soal_3" value="0"> Hau Siang Hau Siang
+                <p class="label">4. Siapakah sosok di balik topeng Batman ?</p>
+                <input type="radio" name="soal_4" value="0"> Natasha Romanov
+                <input type="radio" name="soal_4" value="0"> Peter Parker
+                <input type="radio" name="soal_4" value="0"> Tony Stark
+                <input type="radio" name="soal_4" value="25"> Bruce Wayne
+            </form>
+            <button id="quiz">SUBMIT</button>
+                <div id="data-diri">
+                    <h1>Data Output : </h1>
+                    <p id="hasil_quiz"></p>
+                </div>
+        </div>
+
+    </div>
+
+    
+
+    
+
+    
+<script src="javascript/form11.js"></script>
+
+</body>
+</html>

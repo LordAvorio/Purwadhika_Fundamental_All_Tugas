@@ -1,0 +1,47 @@
+body{
+    background: linear-gradient(90deg, #9ebd13 0%, #008552 100%);
+    color: #555555;
+    font: normal 16px Arial, Helvetica, sans-serif;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+.container{
+    margin: auto;
+    width: 50%;
+}
+
+.box-judul{
+    border-radius: 15px;
+    background-color: #0F528C;
+    color: antiquewhite;
+    margin: 20px 0;
+    padding: 20px;
+
+}
+
+.box-isi{
+    border-radius: 15px;
+    background-color: antiquewhite;
+    color: #0F528C;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.button-test{
+    margin-bottom: 50px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #0F528C;
+    color: #F2AE30;
+    border-width: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.button-test:hover{
+    background-color: #F2AE30;
+    color: #0F528C;
+}

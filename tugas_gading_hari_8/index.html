@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market v1.1</title>
+</head>
+
+<body></body>
+<script>
+    class Produk {
+        constructor(nama, harga, stok) {
+            this.nama = nama,
+                this.harga = harga,
+                this.stok = stok
+        }
+    }
+    var produk_array = []
+    let qty = new Array(produk_array.length)
+
+
+    main: while (true) {
+        main_menu = parseInt(prompt(`
+        =============================
+        Selamat Datang Di Toko Gading
+        --===We Sell Fresh Fruit===--
+        =============================
+        Silahkan Pilih Menu :
+        1. Tambah Produk
+        2. Lihat Produk
+        3. Transaksi
+        4. Exit
+        =============================
+        `))
+        if (main_menu == 1) {
+            menu_1: while (true) {
+                tambahProduk(produk_array)
+                function tambahProduk(produk_array) {
+                    namaProduk: while (true) {
+                        var nama_produk = prompt("Masukkan Nama Produk :");
+                        if (nama_produk == "") {
+                            alert("Nama Produk Tidak Boleh Kosong")
+                        } else {
+                            alert("Nama Produk berhasil ditambahkan")
+                            break namaProduk
+                        }
+                    }
+                    hargaProduk: while (true) {
+                        var harga_produk = parseInt(prompt("Masukkan Harga Produk :"));
+                        if (harga_produk == "" || harga_produk <= 0) {
+                            alert("Harga Produk Tidak Boleh Kosong, bernilai 0 dan minus")
+                        } else {
+                            alert("Harga Produk berhasil ditambahkan")
+                            break hargaProduk
+                        }
+                    }
+                    stokProduk: while (true) {
+                        var stok_produk = parseInt(prompt("Masukkan Stok Produk :"));
+                        if (stok_produk == "" || stok_produk <= 0) {
+                            alert("Stok Produk Tidak Boleh Kosong, bernilai 0 dan minus")
+                        } else {
+                            alert("Stok Produk berhasil ditambahkan")
+                            break stokProduk
+                        }
+                    }
+                    let inputan = produk_array.push(new Produk(nama_produk, harga_produk, stok_produk))
+                    alert("Data berhasil dimasukkan")
+                    return inputan
+                }
+                break menu_1
+            }
+        }
+        else if (main_menu == 2) {
+            menu_2: while (true) {
+                ShowMenu()
+
+                function ShowMenu() {
+                    let menu = "====================\nList Buah\n====================\n"
+                    for (let i = 0; i < produk_array.length; i++) {
+                        menu +=
+                            `${i + 1}. ${produk_array[i].nama} Rp ${produk_array[i].harga},00 /kg stok : ${produk_array[i].stok} \n`
+                    }
+                    menu += `====================`
+                    alert(menu)
+                }
+                break menu_2
+            }
+        }
+        else if (main_menu == 3) {
+            menu_3: while (true) {
+
+                inputBuah(produk_array)
+
+                function inputBuah(produk_array) {
+                    for (let i = 0; i < produk_array.length; i++) {
+                        input_buah: while (true) {
+                            qty[i] = parseInt(prompt(`Masukan total ${produk_array[i].nama} yang ingin anda beli!`))
+                            if (qty[i] > produk_array[i].stok) {
+                                alert(`input over stock ${produk_array[i].nama}`)
+                            } else if (isNaN(qty[i])) {
+                                alert("⚠ wrong input.")
+                            } else {
+                                break input_buah;
+                            }
+                        }
+                    }
+                    return qty
+                }
+
+                var total = eachFruit(qty, produk_array)
+
+                function eachFruit(qty, produk_array) {
+                    let total = [0, 0, 0]
+                    for (i = 0; i < produk_array.length; i++) {
+                        total[i] = produk_array[i].harga * qty[i]
+                    }
+                    return total;
+                }
+
+                var totalBelanja = totalHarga(total)
+
+                function totalHarga(total) {
+                    let totalBelanja = total.reduce((a, b) => a + b)
+                    return totalBelanja
+                }
+
+                detailHarga(qty, produk_array, total, totalBelanja)
+
+                function detailHarga(qty, produk_array, total, totalBelanja) {
+                    // tampilkan output : detail belanja
+                    let detail_harga = `Detail Harga\n====================\n`
+                    for (i = 0; i < produk_array.length; i++) {
+                        detail_harga +=
+                            `Total ${produk_array[i].nama} : ${qty[i]} buah x ${produk_array[i].harga} = ${total[i]}\n`
+                    }
+                    detail_harga += `Total Belanja : ${totalBelanja}\n====================`
+                    return alert(detail_harga)
+                }
+
+                pembayaran(totalBelanja)
+
+                function pembayaran(totalBelanja) {
+                    var bayar = 0
+                    loop_pembayaran: while (true) {
+                        bayar = parseInt(prompt("Masukan uang anda !"))
+                        if (bayar < totalBelanja) {
+                            alert("Maaf uang anda kurang")
+                        } else if (isNaN(bayar)) {
+                            alert("⚠ Wrong input !")
+                        } else if (bayar >= totalBelanja) {
+                            var kembalian = bayar - totalBelanja
+                            break loop_pembayaran;
+                        }
+                    }
+
+                    let showKembalian = `
+                        Terima kasih sudah berbelanja di toko kami 🙏
+                        Uang kembalian : Rp ${kembalian},00 `
+                    return alert(showKembalian)
+                }
+
+                kurangStok(qty, produk_array)
+
+                function kurangStok(qty, produk_array) {
+                    for (let i = 0; i < produk_array.length; i++) {
+                        produk_array[i].stok -= qty[i]
+                    }
+                    return produk_array
+                }
+
+                showStok(produk_array)
+
+                function showStok(produk_array) {
+                    let lihatStok = `STOK BUAH\n====================\n`
+                    for (let i = 0; i < produk_array.length; i++) {
+                        lihatStok += `Total Stok ${produk_array[i].nama} = ${produk_array[i].stok}\n`
+                    }
+                    return alert(lihatStok)
+                }
+
+                let confirmation = confirm("Apakah anda ingin belanja lagi?")
+                if (confirmation === false) {
+                    break menu_3
+                }
+            }
+        }
+        else if (main_menu == 4) {
+            alert("TERIMA KASIH !")
+            break main
+        }else{
+            alert("WRONG INPUT")
+        }
+
+    }
+
+
+</script>
+
+</html>

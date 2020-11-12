@@ -1,0 +1,95 @@
+body{
+
+    font-family: 'Oswald', sans-serif;
+    background-image: linear-gradient(to right, #00b09b, #24b98b, #4bc075, #70c65b, #96c93d);
+    color: aliceblue;
+}
+
+.container{
+    margin: auto;
+    margin-top: 40px;
+    width: 100%;
+}
+
+#judul{
+    color: black;
+    background-color: white;
+    width: 60%;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    margin-left: 19%;
+    
+}
+
+#box{
+    color: black;
+    background-color: white;
+    width: 60%;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 19%;
+    margin-top: 50px;
+}
+
+img{
+    width: 80%;
+    height: 5%;
+}
+
+table,td,tr{
+    border: 5px solid blue;
+    border-color: #00b09b;
+    border-collapse: collapse;
+    
+}
+
+/* table button{
+    
+    background-color: #00b09b;
+    color: white;
+}
+
+table button:hover{
+    background-color: #0F528C;
+    color: #F2AE30;
+} */
+
+#box h1{
+background: -webkit-linear-gradient(#00b09b, #24b98b, #4bc075, #70c65b, #96c93d);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+table button {
+    background-image: linear-gradient(to right, #00b09b, #24b98b, #4bc075, #70c65b, #96c93d)
+}
+
+table button {
+   margin: auto;
+   padding: 5px;
+   border-radius: 5px;
+   border-width: 0px;
+   width: 80%;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   display: block;
+   font-size: 12px;
+   width: 80%;
+
+
+ }
+
+table button:hover {
+   background-position: right center;
+   color: #fff;
+   text-decoration: none;
+ }
+
+
